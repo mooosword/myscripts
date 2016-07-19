@@ -1,0 +1,12 @@
+Error before Pig is launched
+----------------------------
+ERROR 2997: Encountered IOException. File rddd does not exist
+
+java.io.FileNotFoundException: File rddd does not exist
+	at org.apache.hadoop.fs.RawLocalFileSystem.getFileStatus(RawLocalFileSystem.java:449)
+	at org.apache.hadoop.fs.FilterFileSystem.getFileStatus(FilterFileSystem.java:361)
+	at org.apache.pig.impl.io.FileLocalizer.fetchFilesInternal(FileLocalizer.java:818)
+	at org.apache.pig.impl.io.FileLocalizer.fetchFile(FileLocalizer.java:762)
+	at org.apache.pig.Main.run(Main.java:551)
+	at org.apache.pig.Main.main(Main.java:157)
+================================================================================

@@ -1,0 +1,33 @@
+Pig Stack Trace
+---------------
+ERROR 1082: Merge more than 127 map-reduce jobs not supported.
+
+org.apache.pig.impl.plan.optimizer.OptimizerException: ERROR 2136: Internal Error. Unable to set multi-query index for optimization.
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer.setIndexOnLRInSplit(MultiQueryOptimizer.java:619)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer.mergeOneMapPlanWithIndex(MultiQueryOptimizer.java:674)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer.mergeAllMapReduceSplittees(MultiQueryOptimizer.java:980)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer.mergeMapReduceSplittees(MultiQueryOptimizer.java:537)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer.visitMROp(MultiQueryOptimizer.java:190)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceOper.visit(MapReduceOper.java:266)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceOper.visit(MapReduceOper.java:47)
+	at org.apache.pig.impl.plan.ReverseDependencyOrderWalker.walk(ReverseDependencyOrderWalker.java:71)
+	at org.apache.pig.impl.plan.PlanVisitor.visit(PlanVisitor.java:46)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer.visit(MultiQueryOptimizer.java:94)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher.compile(MapReduceLauncher.java:634)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher.launchPig(MapReduceLauncher.java:146)
+	at org.apache.pig.PigServer.launchPlan(PigServer.java:1285)
+	at org.apache.pig.PigServer.executeCompiledLogicalPlan(PigServer.java:1270)
+	at org.apache.pig.PigServer.execute(PigServer.java:1260)
+	at org.apache.pig.PigServer.executeBatch(PigServer.java:354)
+	at org.apache.pig.tools.grunt.GruntParser.executeBatch(GruntParser.java:138)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:200)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:171)
+	at org.apache.pig.tools.grunt.Grunt.exec(Grunt.java:84)
+	at org.apache.pig.Main.run(Main.java:609)
+	at org.apache.pig.Main.main(Main.java:157)
+Caused by: org.apache.pig.backend.executionengine.ExecException: ERROR 1082: Merge more than 127 map-reduce jobs not supported.
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POLocalRearrange.setIndex(POLocalRearrange.java:213)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POLocalRearrange.setMultiQueryIndex(POLocalRearrange.java:201)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer.setIndexOnLRInSplit(MultiQueryOptimizer.java:615)
+	... 21 more
+================================================================================

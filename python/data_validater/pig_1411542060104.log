@@ -1,0 +1,37 @@
+Pig Stack Trace
+---------------
+ERROR 6000: 
+<file loader.pig, line 7, column 0> Output Location Validation Failed for: '/tmp/chenjian/20140922.validate/data/doc_age.data More info to follow:
+Output directory hdfs://mithrilblue-nn1.blue.ygrid.yahoo.com:8020/tmp/chenjian/20140922.validate/data/doc_age.data already exists
+
+org.apache.pig.impl.plan.VisitorException: ERROR 6000: 
+<file loader.pig, line 7, column 0> Output Location Validation Failed for: '/tmp/chenjian/20140922.validate/data/doc_age.data More info to follow:
+Output directory hdfs://mithrilblue-nn1.blue.ygrid.yahoo.com:8020/tmp/chenjian/20140922.validate/data/doc_age.data already exists
+	at org.apache.pig.newplan.logical.rules.InputOutputFileValidator$InputOutputFileVisitor.visit(InputOutputFileValidator.java:95)
+	at org.apache.pig.newplan.logical.relational.LOStore.accept(LOStore.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:64)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.walk(DepthFirstWalker.java:53)
+	at org.apache.pig.newplan.PlanVisitor.visit(PlanVisitor.java:52)
+	at org.apache.pig.newplan.logical.rules.InputOutputFileValidator.validate(InputOutputFileValidator.java:45)
+	at org.apache.pig.backend.hadoop.executionengine.HExecutionEngine.compile(HExecutionEngine.java:285)
+	at org.apache.pig.PigServer.compilePp(PigServer.java:1343)
+	at org.apache.pig.PigServer.executeCompiledLogicalPlan(PigServer.java:1268)
+	at org.apache.pig.PigServer.execute(PigServer.java:1260)
+	at org.apache.pig.PigServer.executeBatch(PigServer.java:354)
+	at org.apache.pig.tools.grunt.GruntParser.executeBatch(GruntParser.java:138)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:200)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:171)
+	at org.apache.pig.tools.grunt.Grunt.exec(Grunt.java:84)
+	at org.apache.pig.Main.run(Main.java:609)
+	at org.apache.pig.Main.main(Main.java:157)
+Caused by: org.apache.hadoop.fs.FileAlreadyExistsException: Output directory hdfs://mithrilblue-nn1.blue.ygrid.yahoo.com:8020/tmp/chenjian/20140922.validate/data/doc_age.data already exists
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputFormat.checkOutputSpecs(FileOutputFormat.java:141)
+	at org.apache.pig.newplan.logical.rules.InputOutputFileValidator$InputOutputFileVisitor.visit(InputOutputFileValidator.java:80)
+	... 22 more
+================================================================================
