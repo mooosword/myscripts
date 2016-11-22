@@ -1,5 +1,5 @@
 import sys, os, re
-from utils import logger
+from pyutils import logger
 import getopt
 LEVEL=1
 

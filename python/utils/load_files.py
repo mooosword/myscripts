@@ -100,7 +100,7 @@ def load_feature_file(fname, sep = '\t'):
 if __name__ == '__main__':
     
     if len(sys.argv) < 2:
-        print "Usage: python load_files.py [filename]"
+        print "Usage: python load_text_data.py [filename]"
         sys.exit(0)
 
     dic = load_file(sys.argv[1],0)
